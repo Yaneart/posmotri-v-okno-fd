@@ -37,6 +37,7 @@ ol {
   font-size: 18px;
   background-color: #1b1919;
   justify-content: center;
+  align-items: center;
 }
 
 .content {
@@ -53,11 +54,12 @@ ol {
 }
 
 .content__list-container {
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
   height: 300px;
   overflow: auto;
   margin-top: 20px;
-  padding-bottom: 5px;
 }
 
 .content__details {
@@ -86,7 +88,6 @@ ol {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  padding-bottom: 25px;
 }
 
 .content__list-item {
@@ -142,7 +143,7 @@ ol {
 }
 
 .title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 75px;
@@ -158,7 +159,7 @@ ol {
 
 .content__video-card-title {
   width: 196px;
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -258,11 +259,21 @@ ol {
   border: 1px solid #ffffff;
 }
 
-input[type="checkbox"]:checked + span {
+.search-form__pseudo-checkbox::after {
+  content: "";
   background-color: #fff;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #1b1919;
+  height: 15px;
+  width: 15px;
+}
+
+input[type="checkbox"]:checked + span {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
 }
 
 input[type="checkbox"]:focus-visible + span {
